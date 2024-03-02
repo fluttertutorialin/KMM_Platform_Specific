@@ -20,7 +20,7 @@ open class ProductsViewModel(
 
     private fun getProducts() {
         viewModelScope.coroutineScope.launch {
-            _uiState.update { BaseUiState.LoadingUiState<ProductsUiState>() }
+            _uiState.update { BaseUiState.LoadingUiState() }
             try {
                 getProductsUseCase.invoke(Unit).getOrThrow().also { result ->
                     _uiState.update {
@@ -32,7 +32,7 @@ open class ProductsViewModel(
                     }
                 }
             } catch (e: Exception) {
-                _uiState.update { BaseUiState.ErrorUiState<ProductsUiState>(e) { getProducts() } }
+                _uiState.update { BaseUiState.ErrorUiState(e) { getProducts() } }
             }
 
         }

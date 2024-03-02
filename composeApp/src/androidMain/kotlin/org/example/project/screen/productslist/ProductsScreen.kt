@@ -29,16 +29,16 @@ fun ProductsScreen(
         modifier = modifier.fillMaxSize()
     ) {
         when (val state = uiState) {
-            is BaseUiState.InitialUiState<*> -> {}
-            is BaseUiState.EmptyUiState<*> -> item { Text(text = "empty") }
-            is BaseUiState.ErrorUiState<*> -> item {
+            is BaseUiState.InitialUiState -> {}
+            is BaseUiState.EmptyUiState -> item { Text(text = "empty") }
+            is BaseUiState.ErrorUiState -> item {
                 Text(
                     modifier = Modifier.clickable { state.onTryAgainClicked.invoke() },
                     text = "Try Again \n" + state.throwable.message.toString()
                 )
             }
 
-            is BaseUiState.LoadingUiState<*> -> {
+            is BaseUiState.LoadingUiState -> {
                 item { ProductsSkeleton() }
             }
 

@@ -17,7 +17,7 @@ open class BaseViewModel<UiState, Events> : KMMViewModel() {
 
     protected val _uiState = MutableStateFlow<BaseUiState<UiState>>(
         viewModelScope,
-        BaseUiState.InitialUiState<UiState>()
+        BaseUiState.InitialUiState
     )
 
     //use this annotation to use in ios

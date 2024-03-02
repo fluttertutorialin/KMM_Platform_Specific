@@ -1,4 +1,4 @@
-package core.di
+package di
 
 import getPlatform
 import io.ktor.client.HttpClient

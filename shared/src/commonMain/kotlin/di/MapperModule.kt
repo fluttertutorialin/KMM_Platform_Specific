@@ -1,4 +1,4 @@
-package core.di
+package di
 
 import data.mapper.ProductsSectionMapper
 import org.koin.dsl.module

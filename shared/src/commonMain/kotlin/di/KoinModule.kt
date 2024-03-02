@@ -1,4 +1,4 @@
-package core.di
+package di
 
 import getPlatform
 import org.koin.core.context.startKoin

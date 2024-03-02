@@ -1,4 +1,4 @@
-package core.di
+package di
 
 import data.network.BaseApi
 import data.network.products.ProductsApi
